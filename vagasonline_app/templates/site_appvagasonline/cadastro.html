@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style_vagasonline.css' %}">
+    <title>vagas online</title>
+</head>
+<body class="body">
+    <header class="header">
+        <h1>Vagas Online</h1>
+        <h2> Venha fazer parte do nosso time!</h2>
+        <p>Estamos em busca de talentos para crescer junto com a gente! Se você quer trabalhar em um ambiente dinâmico e cheio de oportunidades, cadastre-se agora e venha fazer a diferença!</p>
+        <a href="#">Sobre</a>
+        <a href="#">Media Social</a>
+    </header>
+    <main class="main">
+        <nav class="nav">
+            <a href="{% url 'home' %}" class="nav_links">Home</a>
+            <a href="{% url 'cadastro' %}" class="nav_links">Sobre as vagas</a>
+            <a href="#" class="nav_links">Sujestões</a>
+        </nav>
+        <section class="cadastro">
+            <h2>Cadastre-se!</h2>
+            <p>Preencha corretamente os campos abaixo.</p>
+            <form action="{% url 'cadastro' %}" method="post" enctype="multipart/form-data" class="form">
+                {% csrf_token %}
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" maxlength="80" name="nome" class="inputs">
+                <label for="endereço">Endereço</label>
+                <input type="text" name="endereco" id="endereco" class="inputs">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="inputs">
+                <label for="tell">Telefone</label>
+                <input type="tel" name="telefone" id="tell" class="inputs">
+                <label for="date_nasc">Data de nascimento</label>
+                <input type="date" name="nascimento" id="date_nasc" class="inputs">
+                <label for="idade">Idade</label>
+                <input type="number" name="idade" id="idade" value="0" class="inputs">
+                <label for="genero">Genero</label>
+                <select name="genero" id="genero" class="inputs">
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <label for="file">Enviar Currículo</label>
+                <input type="file" name="curriculo" id="file" class="inputs">
+                <label for="vaga">Vagas disponiveis</label>
+                <select name="vaga" id="vaga" class="inputs">
+                    <option value="Farmacêutico">Farmacêutico</option>
+                    <option value="Balconista">Balconista</option>
+                    <option value="Serviços Gerais">Serviços Gerais</option>
+                </select>
+                <section class="button_are">
+                    <button type="reset" class="btn_form">Limpar</button>
+                    <button type="submit" class="btn_form" id="btn_submit">Enviar</button>
+                </section>
+            </form>
+            
+        </section>
+    </main>
+    <footer class="footer">
+        <img src="{% static 'img/perfil.jpg' %}" alt="imagem do dev" class="img_footer">
+        <p>Desenvolvido por Hitamar Silva&copy;</p>
+        <p>Atualizado em 01/04/2025</p>
+    </footer>
+</body>
+</html>

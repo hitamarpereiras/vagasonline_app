@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style_vagasonline.css' %}">
+    <title>vagas online</title>
+</head>
+<body class="body">
+    <header class="header">
+        <h1>Vagas Online</h1>
+        <h2> Venha fazer parte do nosso time!</h2>
+        <p>Estamos em busca de talentos para crescer junto com a gente! Se você quer trabalhar em um ambiente dinâmico e cheio de oportunidades, cadastre-se agora e venha fazer a diferença!</p>
+        <a href="#">Sobre</a>
+        <a href="#">Media Social</a>
+    </header>
+    <main class="main">
+        <nav class="nav">
+            <a href="#" class="nav_links">Sobre as vagas</a>
+            <a href="{% url 'cadastro' %}" class="nav_links">Enviar curriculo</a>
+            <a href="#" class="nav_links">Sujestões</a>
+        </nav>
+        <section class="sobre_vagas">
+            <h2>Bem vindo(a)!</h2>
+            <h3>Leia-me!</h3>
+            <p>Esse site esta disponível apenas na versão mobile, diminua a janela do seu navegador ou acesse em dispositivo movel.</p>
+            <img src="{% static 'img/mobile.jpg' %}" alt="mobile" class="alert">
+        </section>
+    </main>
+    <footer class="footer">
+        <img src="{% static 'img/perfil.jpg' %}" alt="imagem do dev" class="img_footer">
+        <p>Desenvolvido por Hitamar Silva&copy;</p>
+        <p>Atualizado em 01/04/2025</p>
+    </footer>
+</body>
+</html>
